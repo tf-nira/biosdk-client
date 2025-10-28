@@ -284,6 +284,7 @@ public class Client_V_1_0 implements IBioApiV2 {
 				throw new NullPointerException("Response body is null");
 			}
 			String responseBody = body.toString();
+			logger.info(LOGGER_SESSIONID, LOGGER_IDTYPE, "HTTP response: ", responseBody);
 			JSONParser parser = new JSONParser();
 			JSONObject js = (JSONObject) parser.parse(responseBody);
 
