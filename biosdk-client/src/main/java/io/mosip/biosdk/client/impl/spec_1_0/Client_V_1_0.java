@@ -274,6 +274,7 @@ public class Client_V_1_0 implements IBioApiV2 {
 			RequestDto requestDto = generateNewRequestDto(matchRequestDto);
 			String url = getSdkServiceUrl(modalitiesToMatch.get(0), flags)+"/match";
 			logger.debug(LOGGER_SESSIONID, LOGGER_IDTYPE, "HTTP url: ", url);
+			logger.info(LOGGER_SESSIONID, LOGGER_IDTYPE, "HTTP request: ", requestDto.toString());
 			ResponseEntity<?> responseEntity = Util.restRequest(url, HttpMethod.POST, MediaType.APPLICATION_JSON, requestDto, null, String.class);
 			if(!responseEntity.getStatusCode().is2xxSuccessful()){
 				logger.debug(LOGGER_SESSIONID, LOGGER_IDTYPE, "HTTP status: ", responseEntity.getStatusCode().toString());
